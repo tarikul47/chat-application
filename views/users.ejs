@@ -40,7 +40,7 @@
           <h2>Create New User</h2>
         </div>
         <div class="modal-body">
-          <form id="add-user-form">
+          <form id="add-user-form" action="http://localhost:4000/users" method="post" enctype="multipart/form-data">
             <input type="text" placeholder="enter name" name="name" />
             <p class="error show">This is error</p>
             <input type="text" placeholder="enter email" name="email" />

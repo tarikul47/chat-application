@@ -52,7 +52,7 @@ const addUserValidationHandler = (req, res, next) => {
     //console.log("Next");
     next();
   } else {
-    console.log("Error");
+    //console.log("Error");
     if (req.files.length > 0) {
       const { filename } = req.files[0];
      // console.log("file has", req.files[0].path);

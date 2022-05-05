@@ -3,7 +3,8 @@ const path = require("path");
 const createError = require("http-errors");
 
 function uploader(sub_folders, allowed_files_types,max_file_size,err_msg) {
-  const UPLOADS_FOLDER = path.join(__dirname, `../uploads/${sub_folders}`);
+  //const UPLOADS_FOLDER = path.join(__dirname, `../uploads/${sub_folders}`);
+  const UPLOADS_FOLDER = path.join(__dirname, `../public/uploads/${sub_folders}`);
   //console.log(UPLOADS_FOLDER);
   // storage
   const storage = multer.diskStorage({

@@ -8,10 +8,17 @@ const { check } = require("express-validator");
 /**
  * internal import
  */
-const { getUser, addUser } = require("../controller/userController");
+const {
+  getUser,
+  addUser,
+  removeUser,
+} = require("../controller/userController");
 const decorateHtmlResponse = require("../middlewares/common/decorateHtmlResponse");
 const avatarUpload = require("../middlewares/users/avatarUpload");
-const { addUserValidators, addUserValidationHandler } = require("../middlewares/users/uservalidators");
+const {
+  addUserValidators,
+  addUserValidationHandler,
+} = require("../middlewares/users/uservalidators");
 
 /**
  * Login page router
@@ -28,6 +35,10 @@ router.post(
   addUserValidationHandler,
   addUser
 );
-//router.post("/", addUser);
+
+/**
+ * remove user
+ */
+router.delete("/:id", removeUser);
 
 module.exports = router;

@@ -55,7 +55,7 @@ const addUserValidationHandler = (req, res, next) => {
     //console.log("Error");
     if (req.files.length > 0) {
       const { filename } = req.files[0];
-     // console.log("file has", req.files[0].path);
+      console.log("file has", req.files[0].path);
      // console.log("file has", path.join(__dirname, `../../uploads/avatars/${filename}`));
       unlink(
         req.files[0].path,

@@ -67,9 +67,6 @@ async function removeUser(req, res, next) {
       );
     }
 
-    console.log("No");
-
-
     res.status(200).json({
       message: "User was removed successfully!",
     });

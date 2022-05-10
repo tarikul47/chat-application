@@ -13,6 +13,7 @@ const {
   addUser,
   removeUser,
 } = require("../controller/userController");
+const { checkLogin } = require("../middlewares/common/checkLogin");
 const decorateHtmlResponse = require("../middlewares/common/decorateHtmlResponse");
 const avatarUpload = require("../middlewares/users/avatarUpload");
 const {
@@ -23,13 +24,14 @@ const {
 /**
  * Login page router
  */
-router.get("/", decorateHtmlResponse("Users"), getUser);
+router.get("/", decorateHtmlResponse("Users"), checkLogin, getUser);
 
 /**
  * User Added router
  */
 router.post(
   "/",
+  checkLogin,
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
